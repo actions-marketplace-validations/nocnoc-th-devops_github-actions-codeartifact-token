@@ -22,7 +22,7 @@ outputs:
     description: The token to be used
 runs:
   using: 'docker'
-  main: 'Dockerfile'
+  image: 'Dockerfile'
   args:
     - ${{ inputs.aws_access_key }}
     - ${{ inputs.aws_secret_key }}
