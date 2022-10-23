@@ -11,12 +11,6 @@ inputs:
     description: AWS region
     required: true
     default: ap-southeast-1
-  aws_access_key:
-    description: AWS Access Key ID
-    required: true
-  aws_secret_key: 
-    description: AWS Scret Access Key
-    required: true
 outputs:
   codeartifact_token: 
     description: The token to be used
@@ -24,8 +18,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.aws_access_key }}
-    - ${{ inputs.aws_secret_key }}
     - ${{ inputs.aws_codeartifact_domain }}
     - ${{ inputs.aws_codeartifact_owner }}
     - ${{ inputs.aws_region }}
