@@ -11,6 +11,14 @@ inputs:
     description: AWS region
     required: true
     default: ap-southeast-1
+  aws_access_key:
+    description: AWS access key 
+    required: true
+    default: 
+  aws_secret_access_key:
+    description: AWS secret access key 
+    required: true
+    default: 
 outputs:
   codeartifact_token: 
     description: The token to be used
@@ -21,6 +29,8 @@ runs:
     - ${{ inputs.aws_codeartifact_domain }}
     - ${{ inputs.aws_codeartifact_owner }}
     - ${{ inputs.aws_region }}
+    - ${{ inputs.aws_access_key }}
+    - ${{ inputs.aws_secret_access_key }}
 branding:
   icon: arrow-up-circle
   color: blue
